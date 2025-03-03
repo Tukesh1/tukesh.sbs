@@ -1,12 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { cn } from "../lib/utils";
+import { ThemeProvider } from "../components/theme-provider";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { TailwindIndicator } from "../components/tailwind-indicator";
 import { Space_Grotesk } from "next/font/google";
-import { siteMetadata } from "@/data/siteMetadata";
+import { siteMetadata } from "../data/siteMetadata";
 import Head from "./head";
 
 const space_grotesk = Space_Grotesk({

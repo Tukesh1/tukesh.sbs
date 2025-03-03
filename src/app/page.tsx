@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { SOCIALS } from "../data/socials";
-import { SocialLink } from "@/components/social-link";
 import React from "react";
 import Link from "next/link";
+import { SocialLink } from "../components/social-link";
 import TracodeShowcase from "./tracode/page";
 export default function Home() {
 
