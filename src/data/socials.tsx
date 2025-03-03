@@ -13,7 +13,7 @@ export const SOCIALS = [
   },
   {
     label: "X",
-    href: "https://x.com/Tukesh_ach",
+    href: "https://x.com/sarifinsaan",
     icon: XIcon,
   },
   {
@@ -23,7 +23,7 @@ export const SOCIALS = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/tukesh_",
+    href: "https://www.instagram.com/tukesh.__",
     icon: InstagramIcon,
   },
 ];
