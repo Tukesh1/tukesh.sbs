@@ -1,10 +1,8 @@
 "use client";
-
-import clsx from "clsx";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 import { ThemeToggler } from "./theme-toggle";
 import React from "react";
 
@@ -16,7 +14,7 @@ const navItems = {
 };
 
 export function Header() {
-  let pathname = usePathname() || "/";
+  const pathname = usePathname() || "/";
 
   return (
     <header className="mb-10 tracking-tight mt-10">

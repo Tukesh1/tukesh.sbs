@@ -1,4 +1,4 @@
-// app/about/page.tsx (partial)
+
 import React from "react";
 import { TechStack } from "./teckstacks";
 import { ToolStack } from "./toolstack";
@@ -12,7 +12,7 @@ export default function About() {
         <div className="container mx-auto px-4 ">
           {/* Header */}
           <header className="mb-12 text-center">
-           
+
             <p className="mt-2 text-xl text-gray-600 dark:text-gray-400">
               A glimpse into who I am and what drives me
             </p>
@@ -28,7 +28,7 @@ export default function About() {
                 Hey There! 👋
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                I’m <span className="font-bold text-indigo-600 dark:text-indigo-400">Tukesh Kumar</span>, 
+                I’m <span className="font-bold text-indigo-600 dark:text-indigo-400">Tukesh Kumar</span>,
                 a final-year CSE’25 student from Greater Noida, India, studying at GL Bajaj Institute of Technology and Management.
               </p>
               <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -55,7 +55,7 @@ export default function About() {
 
               {/* Quote */}
               <blockquote className="mt-6 italic text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-900/50 p-4 rounded-lg">
-                "Strive to build things that make a difference!"
+                &quot;Strive to build things that make a difference!&quot;
                 <footer className="text-gray-500 dark:text-gray-500 mt-2">— Tukesh</footer>
               </blockquote>
             </div>

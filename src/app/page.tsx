@@ -3,7 +3,6 @@ import { SOCIALS } from "../data/socials";
 import React from "react";
 import Link from "next/link";
 import { SocialLink } from "../components/social-link";
-import TracodeShowcase from "./tracode/page";
 export default function Home() {
 
   return (

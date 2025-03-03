@@ -1,6 +1,4 @@
-import { SocialLink } from "@/components/social-link";
-import { GitHubIcon, LinkIcon } from "@/components/icons";
-import { FaCode, FaDatabase, FaGitAlt, FaJs, FaLinux, FaReact } from "react-icons/fa";
+import { FaGitAlt, FaJs, FaLinux, FaReact } from "react-icons/fa";
 import { SiCplusplus, SiC, SiSqlite } from "react-icons/si";
 import React from "react";
 

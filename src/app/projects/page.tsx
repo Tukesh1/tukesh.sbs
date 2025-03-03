@@ -1,8 +1,6 @@
 import { ProjectCard } from "../../components/project-card";
 import React from "react";
-import { WEB_APPS, AI_ML_PROJECTS, CLI_PROJECTS, TOOLS } from "@/data/projects";
-import { SocialLink } from "@/components/social-link";
-import { GitHubIcon, LinkIcon } from "@/components/icons";
+import { WEB_APPS, AI_ML_PROJECTS, CLI_PROJECTS } from "@/data/projects";
 
 export default function Projects() {
   return (
