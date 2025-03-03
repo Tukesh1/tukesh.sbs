@@ -12,7 +12,7 @@ export function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Adarsha Acharya.
+          Tukesh Kumar.
         </a>
         &nbsp; All rights reserved.
       </p>
