@@ -12,9 +12,9 @@ export default function Home() {
         <div className="lg:w-2/3 text-center lg:text-left p-6">
           <h1 className="text-2xl font-bold ">Tukesh Kumar</h1>
           <p className="mt-4 text-gray-700 dark:text-gray-300 ">
-            I’m a full-stack developer specializing in building scalable web applications with clean and intuitive user interfaces using <strong>React, TypeScript, and Node.js</strong>.
+            I’m a software developer specializing in building scalable web applications with clean and intuitive user interfaces using <strong>React, TypeScript, and Node.js</strong>.
           </p>
-         <br />
+          <br />
           <p className="mb-4 text-gray-700  dark:text-gray-300">
             Currently, I’m building innovative solutions to enhance developer tracking and engagement. If you’d like to collaborate, please&nbsp;
             <a href="mailto:tukeshkrraju1011@gmail.com" className="border-b inline-block">
@@ -22,31 +22,31 @@ export default function Home() {
             </a>
             &nbsp;or reach out on any of my social handles.
           </p>
-          <div className="flex space-x-4 mb-2 mt-4">
-          {SOCIALS.map((social) => (
-            <SocialLink
-              key={social.label}
-              aria-label={`Follow on ${social.label}`}
-              href={social.href}
-              icon={social.icon}
-            />
-          ))}
+          <div className="flex flex-wrap justify-center md:justify-start md:items-center space-x-4 mb-2 mt-4">
+            {SOCIALS.map((social) => (
+              <SocialLink
+                key={social.label}
+                aria-label={`Follow on ${social.label}`}
+                href={social.href}
+                icon={social.icon}
+              />
+            ))}
+          </div>
         </div>
-        </div>
-        
+
 
         {/* Right: Image (1/3 width) */}
         <div className="lg:w-1/3 h-full flex justify-center lg:justify-end mt-6 lg:mt-0">
           <Image
             src="/assets/about1.png"
-            width={300} 
-            height={600} 
+            width={300}
+            height={600}
             alt="avatar"
             priority
             className="h-full w-auto max-h-screen object-cover shadow-lg"
           />
         </div>
-        
+
       </section>
 
 
@@ -61,7 +61,7 @@ export default function Home() {
             </Link>
           </li>
         </ul>
-        
+
       </div>
 
     </React.Fragment>
