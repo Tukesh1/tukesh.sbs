@@ -2,8 +2,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { cn } from "../lib/utils";
 import { ThemeProvider } from "../components/theme-provider";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
+
+
 import { TailwindIndicator } from "../components/tailwind-indicator";
 import { Space_Grotesk } from "next/font/google";
 import { siteMetadata } from "../data/siteMetadata";
