@@ -10,14 +10,16 @@ export default function Resume() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mt-4 text-zinc-800 dark:text-zinc-100">Tukesh Kumar</h1>
           <p className="text-md text-zinc-500 dark:text-zinc-400">Full Stack Developer | AI & Data Enthusiast</p>
-          
+
           <a
             href="/resume.pdf"
-            download
-            className="mt-4 inline-block bg-primary text-black px-6 py-2 rounded-lg text-sm font-medium shadow hover:bg-opacity-80 transition duration-200 dark:text-white "
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block bg-primary text-black px-6 py-2 rounded-lg text-sm font-medium shadow hover:bg-opacity-80 transition duration-200 dark:text-white"
           >
-            📄 Download Resume
+            📄 View Resume
           </a>
+
         </div>
 
         {/* Education */}

@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <section className="mb-5 flex flex-col font-sans lg:flex-row items-center lg:items-start">
+      <section className="mb-1 mt-6 flex flex-col font-sans lg:flex-row items-center lg:items-start">
 
         <div className="lg:w-2/3 text-center lg:text-left p-6">
           <h1 className="text-2xl font-bold ">Tukesh Kumar</h1>
@@ -32,9 +32,11 @@ export default function Home() {
               />
             ))}
           </div>
+          <h1>
+            <a href="./resume" className=" mt-4 font-bold border-b inline-block transition-all text-gray-400  dark:text-gray-300 hover:text-neutral-800 dark:hover:text-neutral-200">Resume </a>
+          </h1>
+
         </div>
-
-
         {/* Right: Image (1/3 width) */}
         <div className="lg:w-1/3 h-full flex justify-center lg:justify-end mt-6 lg:mt-0">
           <Image
@@ -48,7 +50,6 @@ export default function Home() {
         </div>
 
       </section>
-
 
       <div className="my-8 w-full border-t border-gray-200 dark:border-gray-800" />
 

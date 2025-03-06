@@ -19,7 +19,6 @@ interface GitHubCalendarProps {
   endDate?: Date;
 }
 
-// Type the component
 const GitHubCalendarTyped = GitHubCalendar as React.ComponentType<GitHubCalendarProps>;
 
 export function Github() {
