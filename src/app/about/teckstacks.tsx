@@ -1,6 +1,6 @@
 // app/about/teckstacks.tsx (correct typo to 'tech-stack.tsx' if needed)
 import { CgCPlusPlus } from "react-icons/cg";
-import { DiJavascript1, DiReact, DiNodejs, DiMongodb, DiPython, DiGit, DiJava, DiTypo3 } from "react-icons/di";
+import { DiJavascript1, DiReact, DiNodejs, DiMongodb, DiPython, DiGit } from "react-icons/di";
 import { SiNextdotjs } from "react-icons/si";
 import { TbBrandGolang } from "react-icons/tb";
 import { TbBrandTypescript } from "react-icons/tb";
