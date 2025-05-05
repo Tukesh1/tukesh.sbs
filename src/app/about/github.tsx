@@ -1,6 +1,7 @@
-// app/about/github.tsx
+
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
+import { FaGithub } from "react-icons/fa";
 
 // Define custom props interface for TypeScript
 interface GitHubCalendarProps {
@@ -27,12 +28,16 @@ export function Github() {
   startDate.setMonth(today.getMonth() - 12);
 
   return (
-    <div className="flex flex-col items-center pb-2 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold tracking-tighter text-gray-900 dark:text-white mb-4">
-        Days I <span className="text-green-600 dark:text-green-400">Code</span>
-      </h1>
-      <div className="p-4  bg-white dark:bg-zinc-900 rounded-lg shadow-md dark:shadow-none border border-gray-200 dark:border-gray-700 w-full overflow-hidden flex justify-center">
-        <div className="inline-block">
+    <div id="github" className="">
+      <div className="flex items-center gap-2 mb-8 hover:text-teal-600 hover:dark:text-teal-400 transition-colors">
+        <FaGithub className="text-lg" />
+        <span className="font-bold uppercase text-xs relative -bottom-px">GitHub</span>
+      </div>
+      <div className="px-3 py-4 border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/30 dark:hover:border-neutral-50/30 rounded bg-white dark:bg-neutral-900 shadow-md flex flex-col items-center transition-colors duration-700 hover:duration-100">
+        <h1 className="text-base font-semibold text-gray-900 dark:text-white mb-4 tracking-tight text-center">
+          Days I <span className="text-green-600 dark:text-green-400">Code</span>
+        </h1>
+        <div className="overflow-x-auto w-full flex justify-center">
           <GitHubCalendarTyped
             username="tukesh1"
             blockSize={10}

@@ -37,7 +37,7 @@ export default function Home() {
           </h1>
 
         </div>
-        {/* Right: Image (1/3 width) */}
+       
         <div className="lg:w-1/3 h-full flex justify-center lg:justify-end mt-6 lg:mt-0">
           <Image
             src="/assets/about1.png"
