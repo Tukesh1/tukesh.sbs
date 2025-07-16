@@ -9,7 +9,7 @@ export const WEB_APPS = [
   {
     title: "Kreelab",
     tags: ["React", "Node.js", "MongoDB", "Express"],
-    description: "A project with undisclosed details. More updates coming soon.",
+    description: "Kreelab! marketing website made with React, Node.js, MongoDB, and Express.I did it as a freelance project.",
     thumbnail: "/assets/project/kreelab.png",
     repo: "https://github.com/Tukesh1/kreelab",
   },
