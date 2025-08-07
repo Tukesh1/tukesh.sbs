@@ -5,7 +5,7 @@ import React from "react";
 export default function Resume() {
   return (
     <React.Fragment>
-      <section className="max-w-4xl mx-auto px-6 py-12 bg-white dark:bg-zinc-900 rounded-lg shadow-lg">
+      <section className="max-w-4xl mx-auto px-6 py-12 bg-white dark:bg-dark-bg rounded-lg shadow-lg">
         {/* Profile Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mt-4 text-zinc-800 dark:text-zinc-100">Tukesh Kumar</h1>
@@ -64,7 +64,7 @@ export default function Resume() {
               { name: "Git", icon: <FaGitAlt /> },
               { name: "Linux", icon: <FaLinux /> },
             ].map((skill) => (
-              <div key={skill.name} className="flex items-center gap-2 px-3 py-1 text-sm font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-200 rounded-full">
+              <div key={skill.name} className="flex items-center gap-2 px-3 py-1 text-sm font-medium bg-zinc-100 dark:bg-dark-bg text-zinc-600 dark:text-zinc-200 rounded-full">
                 {skill.icon} {skill.name}
               </div>
             ))}

@@ -57,7 +57,7 @@ export function Skills() {
         {skills.map((skill) => (
           <div
             key={skill.title}
-            className="px-3 py-2 border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/30 dark:hover:border-neutral-50/30 rounded flex items-center gap-3 transition-colors duration-700 hover:duration-100 bg-white dark:bg-neutral-900 min-h-0"
+            className="px-3 py-2 border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/30 dark:hover:border-neutral-50/30 rounded flex items-center gap-3 transition-colors duration-700 hover:duration-100 bg-white dark:bg-dark-bg min-h-0"
           >
             <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center">
               {React.cloneElement(skill.icon, { className: (skill.icon.props.className || "") + " text-2xl" })}

@@ -14,6 +14,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-space-grotesk)", ...fontFamily.sans],
       },
+      colors: {
+        'dark-bg': '#1D1E20',
+      },
       typography: {
         quoteless: {
           css: {

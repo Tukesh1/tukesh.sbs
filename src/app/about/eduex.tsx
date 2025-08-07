@@ -82,7 +82,7 @@ export function WorkExperience() {
                 className={`overflow-hidden transition-all duration-300 ${hovered === idx ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}
                 style={{ minHeight: 0 }}
               >
-                <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded p-3 mt-1">
+                <div className="bg-white dark:bg-dark-bg border border-neutral-200 dark:border-neutral-700 rounded p-3 mt-1">
                   <ul className="list-disc pl-5 space-y-1 text-xs text-neutral-700 dark:text-neutral-200">
                     {exp.details.map((d, i) => <li key={i}>{d}</li>)}
                   </ul>
@@ -123,7 +123,7 @@ export function Educations() {
                 className={`overflow-hidden transition-all duration-300 ${hovered === idx ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}
                 style={{ minHeight: 0 }}
               >
-                <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded p-3 mt-1">
+                <div className="bg-white dark:bg-dark-bg border border-neutral-200 dark:border-neutral-700 rounded p-3 mt-1">
                   <ul className="list-disc pl-5 space-y-1 text-xs text-neutral-700 dark:text-neutral-200">
                     {edu.details.map((d, i) => <li key={i}>{d}</li>)}
                   </ul>

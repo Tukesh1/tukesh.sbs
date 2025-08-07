@@ -101,7 +101,7 @@ const Tracode: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-white dark:bg-zinc-900 rounded-xl p-8 max-w-4xl mx-auto border border-gray-200 dark:border-gray-700 shadow-sm"
+          className="bg-white dark:bg-dark-bg rounded-xl p-8 max-w-4xl mx-auto border border-gray-200 dark:border-gray-700 shadow-sm"
         >
           {/* Header */}
           <motion.h1
@@ -180,7 +180,7 @@ const Tracode: React.FC = () => {
                     className={`absolute inset-0 ${feature.bgColor} rounded-lg transform translate-y-1 translate-x-1 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-300`}
                   ></span>
                   <div
-                    className={`relative p-5 bg-white dark:bg-gray-800 border-2 ${feature.borderColor} rounded-lg transition-transform duration-300 group-hover:shadow-md`}
+                    className={`relative p-5 bg-white dark:bg-dark-bg border-2 ${feature.borderColor} rounded-lg transition-transform duration-300 group-hover:shadow-md`}
                   >
                     <div className="flex items-center mb-2">
                       <span className={`${feature.textColor} text-xl mr-3`}>

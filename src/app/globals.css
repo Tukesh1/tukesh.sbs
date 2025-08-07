@@ -9,7 +9,7 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
+    --background: 210 6% 12%;
     --foreground: 213 31% 91%;
   }
 }
@@ -42,7 +42,7 @@
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+  @apply bg-neutral-50 dark:bg-dark-bg rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-800;
 }
 
 .prose code {
