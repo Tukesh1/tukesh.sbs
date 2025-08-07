@@ -3,6 +3,22 @@ import { SOCIALS } from "../data/socials";
 import React from "react";
 import Link from "next/link";
 import { SocialLink } from "../components/social-link";
+import { Metadata } from "next";
+import { siteMetadata } from "../data/siteMetadata";
+
+export const metadata: Metadata = {
+  title: siteMetadata.pages.home.title,
+  description: siteMetadata.pages.home.description,
+  openGraph: {
+    title: siteMetadata.pages.home.title,
+    description: siteMetadata.pages.home.description,
+    url: siteMetadata.siteUrl,
+  },
+  alternates: {
+    canonical: siteMetadata.siteUrl,
+  },
+};
+
 export default function Home() {
 
   return (
@@ -40,7 +56,7 @@ export default function Home() {
        
         <div className="lg:w-1/3 h-full flex justify-center lg:justify-end mt-6 lg:mt-0">
           <Image
-            src="/assets/about1.png"
+            src="/assets/profile.png"
             width={300}
             height={600}
             alt="avatar"

@@ -1,6 +1,21 @@
 import { FaGitAlt, FaJs, FaLinux, FaReact } from "react-icons/fa";
 import { SiCplusplus, SiC, SiSqlite } from "react-icons/si";
 import React from "react";
+import { Metadata } from "next";
+import { siteMetadata } from "../../data/siteMetadata";
+
+export const metadata: Metadata = {
+  title: siteMetadata.pages.resume.title,
+  description: siteMetadata.pages.resume.description,
+  openGraph: {
+    title: siteMetadata.pages.resume.title,
+    description: siteMetadata.pages.resume.description,
+    url: `${siteMetadata.siteUrl}/resume`,
+  },
+  alternates: {
+    canonical: `${siteMetadata.siteUrl}/resume`,
+  },
+};
 
 export default function Resume() {
   return (
@@ -9,7 +24,7 @@ export default function Resume() {
         {/* Profile Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mt-4 text-zinc-800 dark:text-zinc-100">Tukesh Kumar</h1>
-          <p className="text-md text-zinc-500 dark:text-zinc-400">Full Stack Developer | AI & Data Enthusiast</p>
+          <p className="text-md text-zinc-500 dark:text-zinc-400">Frontend Developer & AI Specialist</p>
 
           <a
             href="/resume.pdf"

@@ -1,9 +1,23 @@
-"use client"
 import React from "react";
 import { ToolStack } from "./toolstack";
 import { Github } from "./github";
 import { Skills } from "./skills";
 import { WorkExperience, Educations } from "./eduex";
+import { Metadata } from "next";
+import { siteMetadata } from "../../data/siteMetadata";
+
+export const metadata: Metadata = {
+  title: siteMetadata.pages.about.title,
+  description: siteMetadata.pages.about.description,
+  openGraph: {
+    title: siteMetadata.pages.about.title,
+    description: siteMetadata.pages.about.description,
+    url: `${siteMetadata.siteUrl}/about`,
+  },
+  alternates: {
+    canonical: `${siteMetadata.siteUrl}/about`,
+  },
+};
 
 export default function About() {
   return (

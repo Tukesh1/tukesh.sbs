@@ -1,6 +1,21 @@
 import { ProjectCard } from "../../components/project-card";
 import React from "react";
 import { WEB_APPS, AI_ML_PROJECTS, CLI_PROJECTS } from "@/data/projects";
+import { Metadata } from "next";
+import { siteMetadata } from "../../data/siteMetadata";
+
+export const metadata: Metadata = {
+  title: siteMetadata.pages.projects.title,
+  description: siteMetadata.pages.projects.description,
+  openGraph: {
+    title: siteMetadata.pages.projects.title,
+    description: siteMetadata.pages.projects.description,
+    url: `${siteMetadata.siteUrl}/projects`,
+  },
+  alternates: {
+    canonical: `${siteMetadata.siteUrl}/projects`,
+  },
+};
 
 export default function Projects() {
   return (

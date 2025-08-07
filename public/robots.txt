@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://tukesh.sbs/sitemap.xml
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Disallow specific paths (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /resume
+Allow: /tracode

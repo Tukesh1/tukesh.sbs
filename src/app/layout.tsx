@@ -24,12 +24,23 @@ export const metadata: Metadata = {
     template: `%s | ${siteMetadata.title}`,
   },
   description: siteMetadata.description,
+  keywords: siteMetadata.keywords,
+  authors: [{ name: siteMetadata.author }],
+  creator: siteMetadata.author,
+  publisher: siteMetadata.author,
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
-    url: "./",
+    url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 630,
+        alt: `${siteMetadata.title} - Software Developer`,
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -45,9 +56,17 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: siteMetadata.title,
     card: "summary_large_image",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
     images: [siteMetadata.socialBanner],
+    creator: "@sarifInsaan",
+  },
+  // verification: {
+  //   google: "your-google-verification-code", // Add your Google verification code when you get it
+  // },
+  alternates: {
+    canonical: siteMetadata.siteUrl,
   },
 };
 

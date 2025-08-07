@@ -1,12 +1,11 @@
+import { StructuredData } from "../components/structured-data";
+
 export default function Head() {
   return (
     <>
-    
-      
       <link
         rel="icon"
         type="image/png"
-       
         href="favicon.png"
       />
       <link rel="manifest" href="/_static/favicons/site.webmanifest" />
@@ -28,6 +27,10 @@ export default function Head() {
         name="google-site-verification"
         content="br9AjaAyJgS4OVigpXtHmm2DwdzuzMqzpK4G77lD2TY"
       />
+      
+      {/* Structured Data for SEO */}
+      <StructuredData type="person" />
+      <StructuredData type="website" />
     </>
   );
 }
