@@ -16,4 +16,5 @@ Allow: /
 Allow: /about
 Allow: /projects
 Allow: /resume
+Allow: /activity
 Allow: /tracode
