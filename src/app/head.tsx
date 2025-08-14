@@ -8,7 +8,7 @@ export default function Head() {
         type="image/png"
         href="favicon.png"
       />
-      <link rel="manifest" href="/_static/favicons/site.webmanifest" />
+      <link rel="manifest" href="/site.webmanifest" />
    
       <meta name="msapplication-TileColor" content="#000000" />
       <meta

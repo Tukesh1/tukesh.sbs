@@ -13,6 +13,13 @@ export const WEB_APPS = [
     thumbnail: "/assets/project/kreelab.png",
     repo: "https://github.com/Tukesh1/kreelab",
   },
+     {
+    title: "School attendance management system",
+    tags: ["React", "Go", "Tailwind CSS", "TypeScript", "Sqlite"],
+    description: "Features real-time attendance tracking, student management, class organization, and comprehensive reporting.",
+    thumbnail: "/assets/project/student-management-interface.png",
+    repo: "https://github.com/Tukesh1/student-api",
+  },
 ];
 
 export const AI_ML_PROJECTS = [

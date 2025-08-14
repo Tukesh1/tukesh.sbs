@@ -62,9 +62,6 @@ export const metadata: Metadata = {
     images: [siteMetadata.socialBanner],
     creator: "@sarifInsaan",
   },
-  // verification: {
-  //   google: "your-google-verification-code", // Add your Google verification code when you get it
-  // },
   alternates: {
     canonical: siteMetadata.siteUrl,
   },
@@ -77,7 +74,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head />
+      <head>
+        <Head />
+      </head>
       <body
         className={cn(
           "mx-auto min-h-screen max-w-4xl antialiased dark:bg-dark-bg dark:text-gray-100",
