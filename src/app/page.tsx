@@ -31,13 +31,27 @@ export default function Home() {
             I’m a software developer specializing in building scalable web applications with clean and intuitive user interfaces using <strong>React, TypeScript, and Node.js</strong>.
           </p>
           <br />
-          <p className="mb-4 text-gray-700  dark:text-gray-300">
-            Currently, I’m building innovative solutions to enhance developer tracking and engagement. If you’d like to collaborate, please&nbsp;
-            <a href="mailto:tukeshkrraju1011@gmail.com" className="border-b inline-block">
+          <p className="mb-4 text-gray-700 dark:text-gray-300">
+            Currently, I’m building{" "}
+            <a
+              href="https://github.com/Tukesh1/codexp-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
+              codexp-ai
+            </a>{" "}
+            — an AI-powered platform that explains, documents, and visualizes source code, helping developers understand and onboard to codebases faster.
+            If you’d like to collaborate, please&nbsp;
+            <a
+              href="mailto:tukeshkrraju1011@gmail.com"
+              className="border-b inline-block"
+            >
               send me an email
             </a>
             &nbsp;or reach out on any of my social handles.
           </p>
+
           <div className="flex flex-wrap justify-center md:justify-start md:items-center space-x-4 mb-2 mt-4">
             {SOCIALS.map((social) => (
               <SocialLink
@@ -53,7 +67,7 @@ export default function Home() {
           </h1>
 
         </div>
-       
+
         <div className="lg:w-1/3 h-full flex justify-center lg:justify-end mt-6 lg:mt-0">
           <Image
             src="/assets/profile.png"
@@ -70,7 +84,18 @@ export default function Home() {
       <div className="my-8 w-full border-t border-gray-200 dark:border-gray-800" />
 
       <div>
-        <h2 className="mb-6 text-2xl font-bold">Check Something Amazing </h2>
+        <h2 className="mb-6 text-2xl font-bold">Cool Stuff I’m Working On </h2>
+        <ul>
+          <li className="py-1">
+            <Link
+              href="https://github.com/tukesh1/codexp-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="text-blue-500 hover:underline font-mono">codexp-ai</span> -Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.
+            </Link>
+          </li>
+        </ul>
         <ul>
           <li className="py-1">
             <Link href="\tracode">
@@ -78,7 +103,6 @@ export default function Home() {
             </Link>
           </li>
         </ul>
-
       </div>
 
     </React.Fragment>

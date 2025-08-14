@@ -74,9 +74,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Head />
-      </head>
+      <Head />
       <body
         className={cn(
           "mx-auto min-h-screen max-w-4xl antialiased dark:bg-dark-bg dark:text-gray-100",
