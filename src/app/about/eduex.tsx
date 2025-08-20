@@ -33,7 +33,7 @@ const educations = [
   {
     school: "GL Bajaj Institute of Technology & Management",
     degree: "B.Tech, Computer Science and Engineering",
-    result: "8.2 CGPA",
+    result: "7.3 CGPA",
     duration: "2021 - 2025",
     details: [
       "Graduated with 8.2 CGPA in Computer Science and Engineering",
@@ -57,10 +57,6 @@ export function WorkExperience() {
   const [hovered, setHovered] = useState<number | null>(null);
   return (
     <div>
-      <div className="flex items-center gap-2 mb-6">
-        <FaBriefcase className="text-lg" />
-        <span className="font-bold uppercase text-sm">Work Experience</span>
-      </div>
       <div className="relative pl-6">
         <div className="absolute left-0 top-0 h-full w-0.5 bg-neutral-700" style={{ minHeight: 80 }} />
         {experiences.map((exp, idx) => (
@@ -100,10 +96,6 @@ export function Educations() {
   const [hovered, setHovered] = useState<number | null>(null);
   return (
     <div>
-      <div className="flex items-center gap-2 mb-6">
-        <FaGraduationCap className="text-lg" />
-        <span className="font-bold uppercase text-sm">Education</span>
-      </div>
       <div className="relative pl-6">
         <div className="absolute left-0 top-0 h-full w-0.5 bg-neutral-700" style={{ minHeight: 80 }} />
         {educations.map((edu, idx) => (
