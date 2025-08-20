@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import { FaBriefcase, FaGraduationCap, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const experiences = [
   {

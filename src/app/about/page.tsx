@@ -3,7 +3,7 @@ import { ToolStack } from "./toolstack";
 import { Github } from "./github";
 import { Skills } from "./skills";
 import { WorkExperience, Educations } from "./eduex";
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "../../components/panel";
+import { Panel, PanelContent, PanelHeader } from "../../components/panel";
 import { FaBriefcase, FaGraduationCap, FaGithub } from "react-icons/fa";
 import { Metadata } from "next";
 import { siteMetadata } from "../../data/siteMetadata";

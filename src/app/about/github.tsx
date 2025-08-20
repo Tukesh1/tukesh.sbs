@@ -1,7 +1,6 @@
 
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
-import { FaGithub } from "react-icons/fa";
 
 // Define custom props interface for TypeScript
 interface GitHubCalendarProps {
