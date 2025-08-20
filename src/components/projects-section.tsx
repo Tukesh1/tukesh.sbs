@@ -11,10 +11,7 @@ const transformedProjects = [
   ...WEB_APPS.map(project => ({
     id: project.title.toLowerCase().replace(/\s+/g, '-'),
     title: project.title,
-    period: {
-      start: "2024",
-      end: undefined
-    },
+    period: project.period,
     link: project.repo,
     skills: project.tags,
     description: project.description,
@@ -25,10 +22,7 @@ const transformedProjects = [
   ...AI_ML_PROJECTS.map(project => ({
     id: project.title.toLowerCase().replace(/\s+/g, '-'),
     title: project.title,
-    period: {
-      start: "2024",
-      end: undefined
-    },
+    period: project.period,
     link: project.repo,
     skills: project.tags,
     description: project.description,
@@ -39,10 +33,7 @@ const transformedProjects = [
   ...CLI_PROJECTS.map(project => ({
     id: project.title.toLowerCase().replace(/\s+/g, '-'),
     title: project.title,
-    period: {
-      start: "2024",
-      end: undefined
-    },
+    period: project.period,
     link: project.repo,
     skills: project.tags,
     description: project.description,
