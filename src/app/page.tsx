@@ -3,6 +3,7 @@ import { SOCIALS } from "../data/socials";
 import React from "react";
 import Link from "next/link";
 import { SocialLink } from "../components/social-link";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "../components/panel";
 import { Metadata } from "next";
 import { siteMetadata } from "../data/siteMetadata";
 
@@ -23,88 +24,96 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <section className="mb-1 mt-6 flex flex-col font-sans lg:flex-row items-center lg:items-start">
-
-        <div className="lg:w-2/3 text-center lg:text-left p-6">
-          <h1 className="text-2xl font-bold ">Tukesh Kumar</h1>
-          <p className="mt-4 text-gray-700 dark:text-gray-300 ">
-            I’m a software developer specializing in building scalable web applications with clean and intuitive user interfaces using <strong>React, TypeScript, and Node.js</strong>.
-          </p>
-          <br />
-          <p className="mb-4 text-gray-700 dark:text-gray-300">
-            Currently, I’m building{" "}
-            <a
-              href="https://github.com/Tukesh1/codexp-ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              codexp-ai
-            </a>{" "}
-            — an AI-powered platform that explains, documents, and visualizes source code, helping developers understand and onboard to codebases faster.
-            If you’d like to collaborate, please&nbsp;
-            <a
-              href="mailto:tukeshkrraju1011@gmail.com"
-              className="border-b inline-block"
-            >
-              send me an email
-            </a>
-            &nbsp;or reach out on any of my social handles.
-          </p>
-
-          <div className="flex flex-wrap justify-center md:justify-start md:items-center space-x-4 mb-2 mt-4">
-            {SOCIALS.map((social) => (
-              <SocialLink
-                key={social.label}
-                aria-label={`Follow on ${social.label}`}
-                href={social.href}
-                icon={social.icon}
-              />
-            ))}
+      {/* Hero Panel */}
+      <Panel className="mt-6">
+        <PanelHeader className="lg:flex lg:items-start lg:gap-10">
+          <div className="lg:w-2/3">
+            <PanelTitle className="text-2xl font-bold">Tukesh Kumar</PanelTitle>
           </div>
-          <h1>
-            <a href="./resume" className=" mt-4 font-bold border-b inline-block transition-all text-gray-400  dark:text-gray-300 hover:text-neutral-800 dark:hover:text-neutral-200">Resume </a>
-          </h1>
+        </PanelHeader>
+        <PanelContent className="lg:flex lg:flex-row lg:items-start gap-10">
+          <div className="lg:w-2/3 text-center lg:text-left">
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
+              I’m a software developer specializing in building scalable web applications with clean and intuitive user interfaces using <strong>React, TypeScript, and Node.js</strong>.
+            </p>
+            <p className="mt-6 text-gray-700 dark:text-gray-300">
+              Currently, I’m building{' '}
+              <a
+                href="https://github.com/Tukesh1/codexp-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                codexp-ai
+              </a>{' '}— an AI-powered platform that explains, documents, and visualizes source code, helping developers understand and onboard to codebases faster. If you’d like to collaborate, please{' '}
+              <a
+                href="mailto:tukeshkrraju1011@gmail.com"
+                className="border-b inline-block"
+              >
+                send me an email
+              </a>{' '}or reach out on any of my social handles.
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start md:items-center gap-4 mb-4 mt-6">
+              {SOCIALS.map((social) => (
+                <SocialLink
+                  key={social.label}
+                  aria-label={`Follow on ${social.label}`}
+                  href={social.href}
+                  icon={social.icon}
+                />
+              ))}
+            </div>
+            <div>
+              <Link href="/resume" className="font-bold border-b inline-block transition-all text-gray-400 dark:text-gray-300 hover:text-neutral-800 dark:hover:text-neutral-200">
+                Resume
+              </Link>
+            </div>
+          </div>
+          <div className="lg:w-1/3 flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <Image
+              src="/assets/profile.png"
+              width={300}
+              height={600}
+              alt="avatar"
+              priority
+              className="h-full w-auto max-h-[420px] object-cover shadow-lg rounded-md"
+            />
+          </div>
+        </PanelContent>
+      </Panel>
 
-        </div>
-
-        <div className="lg:w-1/3 h-full flex justify-center lg:justify-end mt-6 lg:mt-0">
-          <Image
-            src="/assets/profile.png"
-            width={300}
-            height={600}
-            alt="avatar"
-            priority
-            className="h-full w-auto max-h-screen object-cover shadow-lg"
-          />
-        </div>
-
-      </section>
-
-      <div className="my-8 w-full border-t border-gray-200 dark:border-gray-800" />
-
-      <div>
-        <h2 className="mb-6 text-2xl font-bold">Cool Stuff I’m Working On </h2>
-        <ul>
-          <li className="py-1">
-            <Link
-              href="https://github.com/tukesh1/codexp-ai"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="text-blue-500 hover:underline font-mono">codexp-ai</span> -Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.
-            </Link>
-          </li>
-        </ul>
-        <ul>
-          <li className="py-1">
-            <Link href="\tracode">
-              <span className="text-blue-500 hover:underline font-mono">Tracode</span> - A platform for coding analytics and developer tracking.
-            </Link>
-          </li>
-        </ul>
-      </div>
-
+      {/* Projects / Work Panel */}
+      <Panel id="work" className="mt-12">
+        <PanelHeader>
+          <PanelTitle className="text-xl font-bold flex items-center gap-2">
+            <span>Cool Stuff I’m Working On</span>
+          </PanelTitle>
+        </PanelHeader>
+        <PanelContent>
+          <ul className="space-y-3">
+            <li>
+              <Link
+                href="https://github.com/tukesh1/codexp-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
+              >
+                <span className="text-blue-500 font-mono group-hover:underline">codexp-ai</span>
+                <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/tracode"
+                className="group block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
+              >
+                <span className="text-blue-500 font-mono group-hover:underline">Tracode</span>
+                <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">A platform for coding analytics and developer tracking.</span>
+              </Link>
+            </li>
+          </ul>
+        </PanelContent>
+      </Panel>
     </React.Fragment>
   );
 }

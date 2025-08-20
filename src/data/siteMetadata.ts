@@ -42,7 +42,7 @@ export const siteMetadata = {
     },
     resume: {
       title: "Resume ",
-      description: "View my professional resume showcasing experience in Frontend Development and AI/ML, skills in React, TypeScript, Python, and innovative project achievements.",
+      description: "View my resume showcasing experience in Frontend Development and AI/ML, skills in React, TypeScript, Python, and innovative project achievements.",
     },
     tracode: {
       title: "Tracode - Coding Progress Tracker",
