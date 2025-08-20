@@ -34,7 +34,18 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
         <div className="flex items-center">
           {/* Project Icon */}
           <div className="mx-4 flex size-6 shrink-0 items-center justify-center text-gray-500 select-none" aria-hidden="true">
-            <div className="size-5 bg-blue-500 rounded"></div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 256 256"
+              className="size-5"
+              aria-hidden="true"
+            >
+              <path 
+                d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,120,47.65,76,128,32l80.35,44Zm8,99.64V133.83l80-43.78v85.76Z" 
+                fill="currentColor"
+              />
+            </svg>
           </div>
 
           {/* Project Content */}

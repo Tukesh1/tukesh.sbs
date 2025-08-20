@@ -66,7 +66,7 @@ export function ProjectsSection() {
 
       <CollapsibleList
         items={transformedProjects}
-        max={4}
+        max={6}
         renderItem={(item) => <ProjectItem project={item} />}
       />
     </Panel>
