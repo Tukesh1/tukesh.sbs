@@ -45,7 +45,7 @@ export default function Home() {
                 className="text-blue-500 hover:underline"
               >
                 codexp-ai
-              </a>{' '}— an AI-powered platform that explains, documents, and visualizes source code, helping developers understand and onboard to codebases faster. If you’d like to collaborate, please{' '}
+              </a>{' '} an AI-powered platform that explains, documents, and visualizes source code, helping developers understand and onboard to codebases faster. If you’d like to collaborate, please{' '}
               <a
                 href="mailto:tukeshkrraju1011@gmail.com"
                 className="border-b inline-block"
@@ -64,9 +64,16 @@ export default function Home() {
               ))}
             </div>
             <div>
-              <Link href="/resume" className="font-bold border-b inline-block transition-all text-gray-400 dark:text-gray-300 hover:text-neutral-800 dark:hover:text-neutral-200">
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold border-b inline-block transition-all text-gray-400 dark:text-gray-300 hover:text-neutral-800 dark:hover:text-neutral-200"
+              >
                 Resume
-              </Link>
+              </a>
+
             </div>
           </div>
           <div className="lg:w-1/3 flex justify-center lg:justify-end mt-8 lg:mt-0">
@@ -98,16 +105,18 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
               >
-                <span className="text-blue-500 font-mono group-hover:underline">codexp-ai</span>
+                <span className="text-gray-400 dark:text-gray-300 font-mono group-hover:underline">codexp-ai</span>
                 <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.</span>
               </Link>
             </li>
             <li>
               <Link
-                href="/tracode"
+                href="https://github.com/tukesh1/tracode"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
               >
-                <span className="text-blue-500 font-mono group-hover:underline">Tracode</span>
+                <span className="text-gray-400 dark:text-gray-300 font-mono group-hover:underline">Tracode</span>
                 <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">A platform for coding analytics and developer tracking.</span>
               </Link>
             </li>
