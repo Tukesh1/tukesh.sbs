@@ -97,10 +97,10 @@ tukesh-portfolio/
 ### **Clone & Install**
 ```bash
 # Clone the repository
-git clone https://github.com/tukesh1/tukesh-portfolio.git
+git clone https://github.com/tukesh1/tukesh.sbs.git
 
 # Navigate to project directory
-cd tukesh-portfolio
+cd tukesh.sbs
 
 # Install dependencies
 npm install
