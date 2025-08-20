@@ -27,6 +27,10 @@ export default function Head() {
         name="google-site-verification"
         content="br9AjaAyJgS4OVigpXtHmm2DwdzuzMqzpK4G77lD2TY"
       />
+      <meta 
+        name="dmca-site-verification" 
+        content="K1ZuK2dONXZSR1dadCtDc1lxcUkwUT090" 
+      />
       
       {/* Structured Data for SEO */}
       <StructuredData type="person" />
