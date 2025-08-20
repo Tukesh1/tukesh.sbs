@@ -1,9 +1,0 @@
-{
-  "buildCommand": "npm install && npm run build",
-  "framework": "nextjs",
-  "functions": {
-    "app/**/*.{js,jsx,ts,tsx}": {
-      "runtime": "nodejs18.x"
-    }
-  }
-}
