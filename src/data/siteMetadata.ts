@@ -4,7 +4,7 @@ export const siteMetadata = {
   siteUrl: "https://tukesh.sbs",
   socialBanner: "/assets/og-image.png",
   description:
-    "Tukesh Kumar - Frontend Developer & AI Specialist. Creating beautiful, responsive web applications with React and TypeScript, while leveraging AI/ML technologies for innovative solutions.",
+    "Tukesh Kumar - Frontend Developer & AI Engineer. Creating beautiful, responsive web applications with React and TypeScript, while leveraging AI/ML technologies for innovative solutions.",
   keywords: [
     "Tukesh Kumar",
     "Frontend Developer",
@@ -30,7 +30,7 @@ export const siteMetadata = {
   pages: {
     home: {
       title: "Tukesh Kumar",
-      description: "Frontend Developer & AI Specialist creating beautiful, responsive web applications with React and TypeScript, while leveraging AI/ML technologies for innovative solutions.",
+      description: "Frontend Developer & AI Engineer creating beautiful, responsive web applications with React and TypeScript, while leveraging AI/ML technologies for innovative solutions.",
     },
     about: {
       title: "About ",
@@ -39,14 +39,6 @@ export const siteMetadata = {
     projects: {
       title: "Projects ",
       description: "Explore my portfolio of frontend web applications and AI/ML projects. From interactive UIs to machine learning solutions, see what I've built.",
-    },
-    resume: {
-      title: "Resume ",
-      description: "View my resume showcasing experience in Frontend Development and AI/ML, skills in React, TypeScript, Python, and innovative project achievements.",
-    },
-    tracode: {
-      title: "Tracode - Coding Progress Tracker",
-      description: "Tracode: A comprehensive platform to track coding progress across LeetCode, CodeChef, and Codeforces. Built with React and modern frontend technologies.",
     },
   },
 };
