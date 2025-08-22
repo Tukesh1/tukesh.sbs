@@ -1,0 +1,68 @@
+---
+title: Welcome to My Blog
+description: Welcome to my personal blog where I share insights about web development, AI/ML, and my coding journey.
+createdAt: 2025-08-22
+updatedAt: 2025-08-22
+---
+
+## Welcome! 👋
+
+Hey there! I'm excited to share my thoughts and experiences as a software developer. This is where I'll document my journey, share technical insights, and discuss the projects I'm working on.
+
+## What You'll Find Here
+
+- **Development insights** from building web applications
+- **AI/ML experiments** and learnings
+- **Project breakdowns** and technical decisions
+- **Coding challenges** and solutions
+
+## Current Focus
+
+I'm currently working on [codexp-ai](https://github.com/Tukesh1/codexp-ai), an AI-powered platform that explains and visualizes source code. It's been an exciting journey combining web development with artificial intelligence.
+
+## Let's Connect
+```tsx
+  const generateOrganizationSchema = () => ({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": siteMetadata.title,
+    "url": siteMetadata.siteUrl,
+    "logo": `${siteMetadata.siteUrl}/favicon.png`,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": siteMetadata.social.email,
+      "contactType": "customer support"
+    },
+    "sameAs": [
+      siteMetadata.social.githubLink,
+      siteMetadata.social.linkedinLink,
+      siteMetadata.social.x,
+    ]
+  });
+
+  let schema;
+  switch (type) {
+    case 'person':
+      schema = generatePersonSchema();
+      break;
+    case 'website':
+      schema = generateWebsiteSchema();
+      break;
+    case 'organization':
+      schema = generateOrganizationSchema();
+      break;
+    default:
+      schema = generateWebPageSchema();
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+
+```
+Feel free to reach out to me through any of my social platforms. I love connecting with fellow developers and learning from the community.
+
+Thanks for stopping by!

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
-import { siteMetadata } from '@/data/siteMetadata'
+import { siteMetadata } from '../data/siteMetadata'
+import { getAllPosts } from '../data/post'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteMetadata.siteUrl
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/projects',
+    '/post',
     '/resume',
     '/tracode',
   ]
@@ -20,5 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.8,
   }))
 
-  return sitemap
+  // Add blog posts
+  const posts = getAllPosts()
+  const postSitemap = posts.map((post) => ({
+    url: `${baseUrl}/post/${post.slug}`,
+    lastModified: new Date(post.metadata.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
+
+  return [...sitemap, ...postSitemap]
 }

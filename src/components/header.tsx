@@ -10,6 +10,7 @@ const navItems = {
   "/": { name: "home" },
   "/about": { name: "about" },
   "/projects": { name: "projects" },
+  "/post": { name: "post" },
 };
 
 export function Header() {
