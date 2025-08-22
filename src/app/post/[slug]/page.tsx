@@ -8,7 +8,7 @@ import { siteMetadata } from "../../../data/siteMetadata";
 import { MDXContent } from "../../../components/mdx-content";
 
 interface PostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {};
@@ -33,20 +34,21 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     openGraph: {
       title: metadata.title,
       description: metadata.description,
-      url: `${siteMetadata.siteUrl}/post/${params.slug}`,
+      url: `${siteMetadata.siteUrl}/post/${slug}`,
       type: "article",
-      publishedTime: metadata.createdAt,
-      modifiedTime: metadata.updatedAt,
+      publishedTime: post.createdAt,
+      modifiedTime: post.updatedAt,
       authors: [siteMetadata.author],
     },
     alternates: {
-      canonical: `${siteMetadata.siteUrl}/post/${params.slug}`,
+      canonical: `${siteMetadata.siteUrl}/post/${slug}`,
     },
   };
 }
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -65,7 +67,7 @@ export default function PostPage({ params }: PostPageProps) {
       name: siteMetadata.author,
       url: siteMetadata.siteUrl,
     },
-    url: `${siteMetadata.siteUrl}/post/${params.slug}`,
+    url: `${siteMetadata.siteUrl}/post/${slug}`,
   };
 
   return (

@@ -1,7 +1,6 @@
 "use client";
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { cn } from '../lib/utils';
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (

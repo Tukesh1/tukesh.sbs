@@ -6,7 +6,7 @@ export default function Head() {
       <link
         rel="icon"
         type="image/png"
-        href="favicon.png"
+        href="/favicon.png"
       />
       <link rel="manifest" href="/manifest.webmanifest" />
    

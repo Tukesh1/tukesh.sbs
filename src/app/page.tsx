@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { SocialLink } from "../components/social-link";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "../components/panel";
-import { BlogSection } from "../components/blog-section";
 import { Metadata } from "next";
 import { siteMetadata } from "../data/siteMetadata";
 

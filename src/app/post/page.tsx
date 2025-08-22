@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { siteMetadata } from "../../data/siteMetadata";
 import { getAllPosts } from "../../data/post";
 import { PostItem } from "../../components/post-item";
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "../../components/panel";
+import { Panel, PanelContent, PanelHeader } from "../../components/panel";
 
 export const metadata: Metadata = {
     title: "Post",

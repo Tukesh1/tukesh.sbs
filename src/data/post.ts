@@ -76,7 +76,7 @@ export function getPostBySlug(slug: string): Post | null {
       createdAt,
       updatedAt,
     };
-  } catch (error) {
+  } catch {
     return null;
   }
 }
