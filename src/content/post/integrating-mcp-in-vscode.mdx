@@ -30,11 +30,14 @@ Let's create a simple MCP server that provides project information and file oper
 
 ```typescript
 // server.ts
-import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+} from "@modelcontextprotocol/sdk/types.js";
+import * as fs from "fs/promises";
+import * as path from "path";
 
 class ProjectMCPServer {
   private server: Server;
@@ -42,8 +45,8 @@ class ProjectMCPServer {
   constructor() {
     this.server = new Server(
       {
-        name: 'project-assistant',
-        version: '1.0.0',
+        name: "project-assistant",
+        version: "1.0.0",
       },
       {
         capabilities: {
@@ -61,38 +64,38 @@ class ProjectMCPServer {
       return {
         tools: [
           {
-            name: 'read_file',
-            description: 'Read the contents of a file',
+            name: "read_file",
+            description: "Read the contents of a file",
             inputSchema: {
-              type: 'object',
+              type: "object",
               properties: {
                 path: {
-                  type: 'string',
-                  description: 'Path to the file to read',
+                  type: "string",
+                  description: "Path to the file to read",
                 },
               },
-              required: ['path'],
+              required: ["path"],
             },
           },
           {
-            name: 'list_directory',
-            description: 'List contents of a directory',
+            name: "list_directory",
+            description: "List contents of a directory",
             inputSchema: {
-              type: 'object',
+              type: "object",
               properties: {
                 path: {
-                  type: 'string',
-                  description: 'Path to the directory to list',
+                  type: "string",
+                  description: "Path to the directory to list",
                 },
               },
-              required: ['path'],
+              required: ["path"],
             },
           },
           {
-            name: 'get_project_info',
-            description: 'Get information about the current project',
+            name: "get_project_info",
+            description: "Get information about the current project",
             inputSchema: {
-              type: 'object',
+              type: "object",
               properties: {},
             },
           },
@@ -105,11 +108,11 @@ class ProjectMCPServer {
       const { name, arguments: args } = request.params;
 
       switch (name) {
-        case 'read_file':
+        case "read_file":
           return await this.readFile(args.path);
-        case 'list_directory':
+        case "list_directory":
           return await this.listDirectory(args.path);
-        case 'get_project_info':
+        case "get_project_info":
           return await this.getProjectInfo();
         default:
           throw new Error(`Unknown tool: ${name}`);
@@ -119,11 +122,11 @@ class ProjectMCPServer {
 
   private async readFile(filePath: string) {
     try {
-      const content = await fs.readFile(filePath, 'utf-8');
+      const content = await fs.readFile(filePath, "utf-8");
       return {
         content: [
           {
-            type: 'text',
+            type: "text",
             text: content,
           },
         ],
@@ -132,7 +135,7 @@ class ProjectMCPServer {
       return {
         content: [
           {
-            type: 'text',
+            type: "text",
             text: `Error reading file: ${error.message}`,
           },
         ],
@@ -145,13 +148,15 @@ class ProjectMCPServer {
     try {
       const entries = await fs.readdir(dirPath, { withFileTypes: true });
       const listing = entries
-        .map(entry => `${entry.isDirectory() ? '[DIR]' : '[FILE]'} ${entry.name}`)
-        .join('\n');
+        .map(
+          (entry) => `${entry.isDirectory() ? "[DIR]" : "[FILE]"} ${entry.name}`
+        )
+        .join("\n");
 
       return {
         content: [
           {
-            type: 'text',
+            type: "text",
             text: listing,
           },
         ],
@@ -160,7 +165,7 @@ class ProjectMCPServer {
       return {
         content: [
           {
-            type: 'text',
+            type: "text",
             text: `Error listing directory: ${error.message}`,
           },
         ],
@@ -171,13 +176,15 @@ class ProjectMCPServer {
 
   private async getProjectInfo() {
     try {
-      const packageJsonPath = path.join(process.cwd(), 'package.json');
-      const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
-      
+      const packageJsonPath = path.join(process.cwd(), "package.json");
+      const packageJson = JSON.parse(
+        await fs.readFile(packageJsonPath, "utf-8")
+      );
+
       const info = {
-        name: packageJson.name || 'Unknown',
-        version: packageJson.version || '0.0.0',
-        description: packageJson.description || 'No description',
+        name: packageJson.name || "Unknown",
+        version: packageJson.version || "0.0.0",
+        description: packageJson.description || "No description",
         dependencies: Object.keys(packageJson.dependencies || {}),
         devDependencies: Object.keys(packageJson.devDependencies || {}),
       };
@@ -185,7 +192,7 @@ class ProjectMCPServer {
       return {
         content: [
           {
-            type: 'text',
+            type: "text",
             text: JSON.stringify(info, null, 2),
           },
         ],
@@ -194,7 +201,7 @@ class ProjectMCPServer {
       return {
         content: [
           {
-            type: 'text',
+            type: "text",
             text: `Error getting project info: ${error.message}`,
           },
         ],
@@ -276,42 +283,42 @@ To fully integrate your MCP server with VS Code, you can create a companion exte
 
 ```typescript
 // extension.ts
-import * as vscode from 'vscode';
-import { spawn, ChildProcess } from 'child_process';
+import * as vscode from "vscode";
+import { spawn, ChildProcess } from "child_process";
 
 let mcpProcess: ChildProcess | undefined;
 
 export function activate(context: vscode.ExtensionContext) {
   // Start MCP server command
-  const startServer = vscode.commands.registerCommand('mcp.startServer', () => {
+  const startServer = vscode.commands.registerCommand("mcp.startServer", () => {
     if (mcpProcess) {
-      vscode.window.showWarningMessage('MCP Server already running');
+      vscode.window.showWarningMessage("MCP Server already running");
       return;
     }
 
     const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
     if (!workspaceFolder) {
-      vscode.window.showErrorMessage('No workspace found');
+      vscode.window.showErrorMessage("No workspace found");
       return;
     }
 
-    mcpProcess = spawn('node', ['dist/server.js'], {
+    mcpProcess = spawn("node", ["dist/server.js"], {
       cwd: workspaceFolder.uri.fsPath,
     });
 
-    mcpProcess.on('error', (error) => {
+    mcpProcess.on("error", (error) => {
       vscode.window.showErrorMessage(`MCP Error: ${error.message}`);
     });
 
-    vscode.window.showInformationMessage('MCP Server started');
+    vscode.window.showInformationMessage("MCP Server started");
   });
 
   // Stop MCP server command
-  const stopServer = vscode.commands.registerCommand('mcp.stopServer', () => {
+  const stopServer = vscode.commands.registerCommand("mcp.stopServer", () => {
     if (mcpProcess) {
       mcpProcess.kill();
       mcpProcess = undefined;
-      vscode.window.showInformationMessage('MCP Server stopped');
+      vscode.window.showInformationMessage("MCP Server stopped");
     }
   });
 

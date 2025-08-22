@@ -153,3 +153,25 @@ table {
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;
 }
+
+/* Custom text selection colors */
+::selection {
+  background-color: #fbbf24; /* Yellow background */
+  color: #1f2937; /* Dark gray text for contrast */
+}
+
+::-moz-selection {
+  background-color: #fbbf24; /* Yellow background for Firefox */
+  color: #1f2937; /* Dark gray text for contrast */
+}
+
+/* For dark mode, use a slightly different yellow */
+.dark ::selection {
+  background-color: #f59e0b; /* Darker yellow for dark mode */
+  color: #111827; /* Very dark gray text */
+}
+
+.dark ::-moz-selection {
+  background-color: #f59e0b; /* Darker yellow for Firefox dark mode */
+  color: #111827; /* Very dark gray text */
+}

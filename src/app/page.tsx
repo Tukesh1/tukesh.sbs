@@ -124,9 +124,6 @@ export default function Home() {
           </ul>
         </PanelContent>
       </Panel>
-
-      {/* Blog Section */}
-      <BlogSection />
     </React.Fragment>
   );
 }
