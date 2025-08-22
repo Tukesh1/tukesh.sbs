@@ -1,0 +1,330 @@
+---
+title: Integrating Model Context Protocol (MCP) in VS Code Editor
+description: Learn how to integrate Model Context Protocol servers in VS Code to enhance your AI-powered development workflow with custom tools and context.
+---
+
+Model Context Protocol (MCP) is revolutionizing how AI assistants interact with development environments. By integrating MCP servers in VS Code, you can provide your AI assistant with custom tools, contextual information, and enhanced capabilities tailored to your specific workflow.
+
+## What is Model Context Protocol?
+
+MCP is an open standard that enables secure connections between host applications (like VS Code) and contextual data sources. It allows AI assistants to access tools, resources, and contextual information in a standardized way, making them more effective and capable.
+
+## Setting Up MCP in VS Code
+
+### Prerequisites
+
+First, ensure you have the necessary tools installed:
+
+```bash
+# Install Node.js and npm
+node --version
+npm --version
+
+# Install the MCP CLI globally
+npm install -g @modelcontextprotocol/cli
+```
+
+### Creating Your First MCP Server
+
+Let's create a simple MCP server that provides project information and file operations:
+
+```typescript
+// server.ts
+import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+import * as fs from 'fs/promises';
+import * as path from 'path';
+
+class ProjectMCPServer {
+  private server: Server;
+
+  constructor() {
+    this.server = new Server(
+      {
+        name: 'project-assistant',
+        version: '1.0.0',
+      },
+      {
+        capabilities: {
+          tools: {},
+        },
+      }
+    );
+
+    this.setupToolHandlers();
+  }
+
+  private setupToolHandlers() {
+    // List available tools
+    this.server.setRequestHandler(ListToolsRequestSchema, async () => {
+      return {
+        tools: [
+          {
+            name: 'read_file',
+            description: 'Read the contents of a file',
+            inputSchema: {
+              type: 'object',
+              properties: {
+                path: {
+                  type: 'string',
+                  description: 'Path to the file to read',
+                },
+              },
+              required: ['path'],
+            },
+          },
+          {
+            name: 'list_directory',
+            description: 'List contents of a directory',
+            inputSchema: {
+              type: 'object',
+              properties: {
+                path: {
+                  type: 'string',
+                  description: 'Path to the directory to list',
+                },
+              },
+              required: ['path'],
+            },
+          },
+          {
+            name: 'get_project_info',
+            description: 'Get information about the current project',
+            inputSchema: {
+              type: 'object',
+              properties: {},
+            },
+          },
+        ],
+      };
+    });
+
+    // Handle tool calls
+    this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
+      const { name, arguments: args } = request.params;
+
+      switch (name) {
+        case 'read_file':
+          return await this.readFile(args.path);
+        case 'list_directory':
+          return await this.listDirectory(args.path);
+        case 'get_project_info':
+          return await this.getProjectInfo();
+        default:
+          throw new Error(`Unknown tool: ${name}`);
+      }
+    });
+  }
+
+  private async readFile(filePath: string) {
+    try {
+      const content = await fs.readFile(filePath, 'utf-8');
+      return {
+        content: [
+          {
+            type: 'text',
+            text: content,
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `Error reading file: ${error.message}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  }
+
+  private async listDirectory(dirPath: string) {
+    try {
+      const entries = await fs.readdir(dirPath, { withFileTypes: true });
+      const listing = entries
+        .map(entry => `${entry.isDirectory() ? '[DIR]' : '[FILE]'} ${entry.name}`)
+        .join('\n');
+
+      return {
+        content: [
+          {
+            type: 'text',
+            text: listing,
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `Error listing directory: ${error.message}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  }
+
+  private async getProjectInfo() {
+    try {
+      const packageJsonPath = path.join(process.cwd(), 'package.json');
+      const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
+      
+      const info = {
+        name: packageJson.name || 'Unknown',
+        version: packageJson.version || '0.0.0',
+        description: packageJson.description || 'No description',
+        dependencies: Object.keys(packageJson.dependencies || {}),
+        devDependencies: Object.keys(packageJson.devDependencies || {}),
+      };
+
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(info, null, 2),
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `Error getting project info: ${error.message}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  }
+
+  async start() {
+    const transport = new StdioServerTransport();
+    await this.server.connect(transport);
+  }
+}
+
+// Start the server
+const server = new ProjectMCPServer();
+server.start().catch(console.error);
+```
+
+### Configuring VS Code
+
+Create a configuration file for your MCP server:
+
+```json
+// mcp-config.json
+{
+  "servers": {
+    "project-assistant": {
+      "command": "node",
+      "args": ["./dist/server.js"],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
+```
+
+### Building and Running
+
+Create a build script in your `package.json`:
+
+```json
+{
+  "name": "project-mcp-server",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}
+```
+
+Build and test your server:
+
+```bash
+# Install dependencies
+npm install
+
+# Build the TypeScript code
+npm run build
+
+# Test the server
+echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}' | node dist/server.js
+```
+
+## Integrating with VS Code Extensions
+
+To fully integrate your MCP server with VS Code, you can create a companion extension:
+
+```typescript
+// extension.ts
+import * as vscode from 'vscode';
+import { spawn, ChildProcess } from 'child_process';
+
+let mcpProcess: ChildProcess | undefined;
+
+export function activate(context: vscode.ExtensionContext) {
+  // Start MCP server command
+  const startServer = vscode.commands.registerCommand('mcp.startServer', () => {
+    if (mcpProcess) {
+      vscode.window.showWarningMessage('MCP Server already running');
+      return;
+    }
+
+    const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+    if (!workspaceFolder) {
+      vscode.window.showErrorMessage('No workspace found');
+      return;
+    }
+
+    mcpProcess = spawn('node', ['dist/server.js'], {
+      cwd: workspaceFolder.uri.fsPath,
+    });
+
+    mcpProcess.on('error', (error) => {
+      vscode.window.showErrorMessage(`MCP Error: ${error.message}`);
+    });
+
+    vscode.window.showInformationMessage('MCP Server started');
+  });
+
+  // Stop MCP server command
+  const stopServer = vscode.commands.registerCommand('mcp.stopServer', () => {
+    if (mcpProcess) {
+      mcpProcess.kill();
+      mcpProcess = undefined;
+      vscode.window.showInformationMessage('MCP Server stopped');
+    }
+  });
+
+  context.subscriptions.push(startServer, stopServer);
+}
+
+export function deactivate() {
+  mcpProcess?.kill();
+}
+```
+
+## Conclusion
+
+Integrating MCP in VS Code opens up powerful possibilities for AI-assisted development. By creating custom MCP servers, you can provide your AI assistant with project-specific context, tools, and capabilities that make it truly useful for your development workflow.
+
+Start with simple tools and gradually add more sophisticated features as you become comfortable with the MCP protocol. The investment in setting up MCP integration will pay dividends in enhanced productivity and more intelligent AI assistance.

@@ -58,8 +58,8 @@ export default function PostPage({ params }: PostPageProps) {
     "@type": "BlogPosting",
     headline: post.metadata.title,
     description: post.metadata.description,
-    datePublished: post.metadata.createdAt,
-    dateModified: post.metadata.updatedAt,
+    datePublished: post.createdAt,
+    dateModified: post.updatedAt,
     author: {
       "@type": "Person",
       name: siteMetadata.author,

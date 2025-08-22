@@ -12,25 +12,21 @@ export function PostItem({ post }: PostItemProps) {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
-    });
+    }).replace(' ', '-').replace(',', '');
   };
 
   return (
     <Link 
       href={`/post/${post.slug}`}
-      className="block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
+      className="group flex flex-col flex-wrap items-start text-balance text-lg font-medium text-gray-900 dark:text-white sm:flex-row sm:items-center"
     >
-      <div className="space-y-1">
-        <div className="text-sm text-gray-500 dark:text-gray-400">
-          {formatDate(post.metadata.createdAt)}
-        </div>
-        <h3 className="text-gray-400 dark:text-gray-300 font-mono group-hover:underline">
-          {post.metadata.title}
-        </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          {post.metadata.description}
-        </p>
-      </div>
+      <span className="mr-2 hidden h-1.5 w-1.5 bg-gray-900 dark:bg-white transition-all group-hover:h-5 group-hover:bg-yellow-400 sm:block"></span>
+      <span className="mr-1.5 flex-shrink-0 underline decoration-2 underline-offset-2 transition-colors group-hover:text-yellow-400">
+        {post.metadata.title}
+      </span>
+      <span className="text-sm text-gray-500 dark:text-zinc-500 sm:text-lg font-normal">
+        ({formatDate(post.createdAt)})
+      </span>
     </Link>
   );
 }
