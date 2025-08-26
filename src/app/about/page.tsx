@@ -2,9 +2,10 @@ import React from "react";
 import { ToolStack } from "./toolstack";
 import { Github } from "./github";
 import { Skills } from "./skills";
+import { Certifications } from "./certifications";
 import { WorkExperience, Educations } from "./eduex";
 import { Panel, PanelContent, PanelHeader } from "../../components/panel";
-import { FaBriefcase, FaGraduationCap, FaGithub } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaGithub, FaCertificate } from "react-icons/fa";
 import { Metadata } from "next";
 import { siteMetadata } from "../../data/siteMetadata";
 
@@ -62,6 +63,23 @@ export default function About() {
               </PanelHeader>
               <PanelContent>
                 <Skills />
+              </PanelContent>
+            </Panel>
+          </section>
+
+          {/* Certifications Section */}
+          <section className="mt-12 max-w-4xl mx-auto">
+            <Panel>
+              <PanelHeader>
+                <div className="flex items-center gap-2 hover:text-teal-600 hover:dark:text-teal-400 transition-colors">
+                  <FaCertificate className="text-sm" />
+                  <span className="font-bold uppercase text-xs relative -bottom-px">Certifications</span>
+                </div>
+              </PanelHeader>
+              <PanelContent>
+                <div className="mt-4 sm:mt-7 flex flex-col gap-3 sm:gap-5">
+                  <Certifications />
+                </div>
               </PanelContent>
             </Panel>
           </section>
