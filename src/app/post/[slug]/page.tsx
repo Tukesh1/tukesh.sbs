@@ -78,9 +78,9 @@ export default async function PostPage({ params }: PostPageProps) {
       />
 
       {/* Clean Medium-style layout */}
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back navigation - subtle and minimal */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/post"
             className="inline-flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
@@ -91,23 +91,23 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
 
         {/* Article header - clean and focused */}
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 leading-tight mb-6">
+        <header className="mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 leading-tight mb-4 sm:mb-6">
             {post.metadata.title}
           </h1>
           
-          <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
             {post.metadata.description}
           </p>
         </header>
 
-        {/* Article content - Medium-style typography */}
-        <div className="prose prose-lg max-w-none">
+        {/* Article content */}
+        <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none prose-gray dark:prose-invert">
           <MDXContent source={post.content} />
         </div>
 
         {/* Minimal footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <footer className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-gray-200 dark:border-gray-800">
           <Link
             href="/post"
             className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
