@@ -6,7 +6,8 @@ import { SocialLink } from "../components/social-link";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "../components/panel";
 import { Metadata } from "next";
 import { siteMetadata } from "../data/siteMetadata";
-
+import { VerifiedIcon } from "../components/icons";
+import { Typewriter } from "@/components/typewriter";
 export const metadata: Metadata = {
   title: siteMetadata.pages.home.title,
   description: siteMetadata.pages.home.description,
@@ -28,7 +29,15 @@ export default function Home() {
       <Panel className="mt-6">
         <PanelHeader className="lg:flex lg:items-start lg:gap-10">
           <div className="lg:w-2/3">
-            <PanelTitle className="text-2xl font-bold">Tukesh Kumar</PanelTitle>
+            <PanelTitle className="text-2xl font-bold flex items-center gap-2">
+              Tukesh Kumar
+              <VerifiedIcon className="inline-block size-[0.8em] translate-y-px text-sky-500 select-none" aria-hidden="true" />
+            </PanelTitle>
+            <p className="font-mono text-sm text-balance text-muted-foreground select-none">
+              <Typewriter
+                phrases={["Open Source Contributor", "Software Engineer", "Always learning, always shipping."]}
+              />
+            </p>
           </div>
         </PanelHeader>
         <PanelContent className="lg:flex lg:flex-row lg:items-start gap-10">
@@ -107,17 +116,6 @@ export default function Home() {
               >
                 <span className="text-gray-400 dark:text-gray-300 font-mono group-hover:underline">codexp-ai</span>
                 <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://github.com/tukesh1/tracode"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
-              >
-                <span className="text-gray-400 dark:text-gray-300 font-mono group-hover:underline">Tracode</span>
-                <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">A platform for coding analytics and developer tracking.</span>
               </Link>
             </li>
           </ul>
