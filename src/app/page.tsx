@@ -33,7 +33,7 @@ export default function Home() {
               Tukesh Kumar
               <VerifiedIcon className="inline-block size-[0.8em] translate-y-px text-sky-500 select-none" aria-hidden="true" />
             </PanelTitle>
-            <p className="font-mono text-sm text-balance text-muted-foreground select-none">
+            <p className=" text-sm text-balance text-muted-foreground dark:text-gray-400 select-none">
               <Typewriter
                 phrases={["Open Source Contributor", "Software Engineer", "Always learning, always shipping."]}
               />
