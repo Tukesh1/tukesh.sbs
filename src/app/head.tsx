@@ -25,7 +25,7 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="google-site-verification"
-        content="br9AjaAyJgS4OVigpXtHmm2DwdzuzMqzpK4G77lD2TY"
+        content="xkBWbb9OnEAZEfrakVYXOpIcFlAH5qEA66FtywraJfI"
       />
       <meta 
         name="dmca-site-verification" 

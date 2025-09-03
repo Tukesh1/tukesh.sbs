@@ -19,8 +19,8 @@ export function StructuredData({
     "name": siteMetadata.author,
     "url": siteMetadata.siteUrl,
     "email": siteMetadata.social.email,
-    "jobTitle": "Frontend Developer & AI Specialist",
-    "description": "Frontend Developer & AI Specialist creating responsive web applications and AI-powered solutions",
+    "jobTitle": "Frontend Developer & AI Engineer",
+    "description": "Frontend Developer & AI Engineer creating responsive web applications and AI-powered solutions",
     "sameAs": [
       siteMetadata.social.githubLink,
       siteMetadata.social.linkedinLink,
@@ -44,7 +44,8 @@ export function StructuredData({
     ],
     "alumniOf": {
       "@type": "EducationalOrganization",
-      "name": "Your University/College Name" // You can update this
+      "name": "GL BAJAJ Institute of Technology & Management",
+      "sameAs": "https://www.glbajaj.edu.in/"
     },
     "address": {
       "@type": "PostalAddress",
