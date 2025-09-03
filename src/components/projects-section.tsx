@@ -6,7 +6,7 @@ import { Panel, PanelHeader, PanelTitle } from "./panel";
 import { CollapsibleList } from "./collapsible-list";
 import { ProjectItem } from "./project-item";
 
-// Transform your existing project data to match chanhdai.com structure
+
 const transformedProjects = [
   ...WEB_APPS.map(project => ({
     id: project.title.toLowerCase().replace(/\s+/g, '-'),

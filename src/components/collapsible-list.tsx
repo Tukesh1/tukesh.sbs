@@ -47,9 +47,9 @@ export function CollapsibleList<T>({
 
       {/* Show More/Less Button */}
       {items.length > max && (
-        <div className="flex h-12 items-center justify-center pb-px border-t border-gray-200 dark:border-gray-800">
+        <div className="flex h-12 items-center justify-center pb-px border-t border-gray-500 dark:border-gray-800">
           <Collapsible.Trigger asChild>
-            <button className="group/collapsible-trigger flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+            <button className="group/collapsible-trigger flex items-center font-mono gap-2 px-3 py-1 text-sm font-medium rounded-lg bg-zinc-100 text-gray-700 dark:bg-zinc-700 dark:text-gray-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
               <span className="hidden group-data-[state=closed]/collapsible-trigger:block">
                 Show More
               </span>

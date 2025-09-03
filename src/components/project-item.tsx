@@ -78,12 +78,12 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative flex size-6 shrink-0 items-center justify-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 after:absolute after:-inset-2"
+                  className="relative flex size-6 shrink-0 items-center  justify-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 after:absolute after:-inset-2"
                   onClick={(e) => e.stopPropagation()}
                   title="View Project"
                 >
                   <ExternalLink className="pointer-events-none size-4" />
-                  <span className="sr-only">Open Project Link</span>
+                  <span className="sr-only font-mono">Open Project Link</span>
                 </a>
               )}
 
@@ -102,7 +102,7 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
           <div className="space-y-4 border-t border-dashed border-gray-300 dark:border-gray-600 p-4">
             {project.description && (
               <div className="prose prose-sm max-w-none">
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300  text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
@@ -112,9 +112,10 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
               <ul className="flex flex-wrap gap-1.5">
                 {project.skills.map((skill, index) => (
                   <li key={index} className="flex">
-                    <span className="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <span className="inline-flex items-center rounded-lg border border-transparent bg-zinc-50 px-2 py-0.5 font-mono text-xs text-gray-600 dark:bg-zinc-900 dark:text-gray-400">
                       {skill}
                     </span>
+
                   </li>
                 ))}
               </ul>

@@ -2,7 +2,7 @@ export const siteMetadata = {
   title: "Tukesh Kumar",
   author: "Tukesh Kumar",
   siteUrl: "https://tukesh.sbs",
-  socialBanner: "/assets/og-image.png",
+  socialBanner: "/assets/profile.png",
   description:
     "Tukesh Kumar - Frontend Developer & AI Engineer. Creating beautiful, responsive web applications with React and TypeScript, while leveraging AI/ML technologies for innovative solutions.",
   keywords: [
@@ -34,11 +34,11 @@ export const siteMetadata = {
     },
     about: {
       title: "About ",
-      description: "Learn about my journey as a Frontend Developer & AI Specialist, my skills in React, TypeScript, Python, and experience building AI-powered web applications.",
+      description: "My journey as a Frontend Developer & AI Specialist, my skills in React, TypeScript, Python, and experience building AI-powered web applications.",
     },
     projects: {
       title: "Projects ",
-      description: "Explore my portfolio of frontend web applications and AI/ML projects. From interactive UIs to machine learning solutions, see what I've built.",
+      description: "Explore my frontend web applications and AI/ML projects. From interactive UIs to machine learning solutions, see what I've built.",
     },
   },
 };
