@@ -10,6 +10,7 @@ import { TailwindIndicator } from "../components/tailwind-indicator";
 import { Space_Grotesk } from "next/font/google";
 import { siteMetadata } from "../data/siteMetadata";
 import Head from "./head";
+import Script from "next/script";
 
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -99,6 +100,18 @@ export default function RootLayout({
           </main>
           <TailwindIndicator />
         </ThemeProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P36W5PCJC2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P36W5PCJC2');
+          `}
+        </Script>
       </body>
     </html>
   );
