@@ -15,6 +15,9 @@ export const WEB_APPS = [
     title: "Tracode",
     tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js", "Express", "MongoDB"],
     description: "A unified dashboard to track coding progress across LeetCode, CodeChef, and Codeforces. Built because I was tired of jumping between platforms to check my stats. Features real-time progress tracking, visual analytics, and friendly competition with other developers. The platform aggregates data from multiple coding platforms into one clean interface.",
+    
+    
+    
     thumbnail: "/assets/project/tracode.png",
     repo: "https://github.com/tukesh1/tracode",
     period: {
