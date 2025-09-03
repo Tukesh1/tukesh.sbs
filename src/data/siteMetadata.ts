@@ -8,7 +8,7 @@ export const siteMetadata = {
   keywords: [
     "Tukesh Kumar",
     "Frontend Developer",
-    "AI Specialist",
+    "AI Engineer",
     "React Developer",
     "TypeScript",
     "JavaScript",

@@ -26,7 +26,7 @@ export default function About() {
   return (
     <React.Fragment>
       <section className="py-12">
-        <div className="mx-[6%]">
+        <div className="max-w-4xl mx-auto">
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <Panel>
               <PanelHeader>
