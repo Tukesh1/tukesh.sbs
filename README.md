@@ -30,26 +30,19 @@ A modern, portfolio website which is clean and build with cutting-edge technolog
 ##  Tech Stack
 
 #### *Frontend*
-```⚡ Next.js 15.2.0      - React framework with App Router
- Tailwind CSS 3.4   - Utility-first CSS framework
- TypeScript 5.0      - Type-safe JavaScript
- Framer Motion       - Animation library
- next-themes        - Dark/Light theme switching
+``` Next.js 15.2.0     
+ Tailwind CSS 3.4 
+ TypeScript 5.0   
+ next-themes  
 ```
 
 #### *Tools & Libraries*
 ```
-React Icons        - Icon library
-GitHub Calendar    - Contribution    visualization
-Space Grotesk      - Modern typography
+React Icons        
+GitHub Calendar    
+Space Grotesk  
 ```
 
-#### *Development*
-```
-ESLint             - Code linting
-PostCSS            - CSS processing
-npm                - Package management
-```
 
 ### 🛠 Installation & Setup
 
