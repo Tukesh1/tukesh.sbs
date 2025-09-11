@@ -62,7 +62,7 @@ export default function Home() {
                 send me an email
               </a>{' '}or reach out on any of my social handles.
             </p>
-            <div className="flex flex-wrap justify-center md:justify-start md:items-center gap-4 mb-4 mt-6">
+            <div className="flex flex-wrap justify-center md:justify-center lg:justify-start md:items-center gap-4 mb-4 mt-6">
               {SOCIALS.map((social) => (
                 <SocialLink
                   key={social.label}
@@ -86,14 +86,15 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:w-1/3 flex justify-center lg:justify-end mt-8 lg:mt-0">
-            <Image
-              src="/assets/profile.png"
-              width={300}
-              height={600}
-              alt="avatar"
-              priority
-              className="h-full w-auto max-h-[420px] object-cover shadow-lg rounded-md"
-            />
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full ring-2 ring-sky-500/20 dark:ring-sky-400/20 shadow-lg overflow-hidden">
+                <Image
+                  src="/assets/profile.png"
+                  alt="Tukesh Kumar — avatar"
+                  priority
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
           </div>
         </PanelContent>
       </Panel>
