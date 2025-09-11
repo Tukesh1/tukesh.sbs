@@ -105,7 +105,8 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
         </div>
 
         <Collapsible.Content className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-          <div className="border-t border-dashed border-gray-300 dark:border-gray-600 p-4">
+          <div className="relative border-t border-b border-dashed border-gray-300 dark:border-gray-600 p-4">
+            <div aria-hidden className="hidden md:block absolute left-[33.333%] top-0 bottom-0 border-l border-dashed border-gray-300 dark:border-gray-600" />
             <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
               {/* Thumbnail column */}
               <div className="md:col-span-1 flex items-center justify-center">
@@ -126,7 +127,7 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
                 )}
               </div>
               {/* Description and skills column */}
-              <div className="md:col-span-2">
+              <div className="md:col-span-2 md:pl-6">
                 {points.length > 0 && (
                   <div className="prose prose-sm max-w-none">
                     {points.length === 1 ? (
