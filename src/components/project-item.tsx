@@ -117,6 +117,8 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
                         src={project.thumbnail}
                         alt={`Thumbnail of ${project.title}`}
                         fill
+                        loading="eager"
+                        priority
                         className="object-cover"
                         unoptimized
                       />

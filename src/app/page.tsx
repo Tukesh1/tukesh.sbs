@@ -85,16 +85,16 @@ export default function Home() {
 
             </div>
           </div>
-          <div className="lg:w-1/3 flex justify-center lg:justify-end mt-8 lg:mt-0">
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full ring-2 ring-sky-500/20 dark:ring-sky-400/20 shadow-lg overflow-hidden">
-                <Image
-                  src="/assets/profile.png"
-                  alt="Tukesh Kumar — avatar"
-                  priority
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
+          <div className="lg:w-1/3 flex justify-center lg:justify-end lg:mt-0">
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full ring-2 ring-sky-500/20 dark:ring-sky-400/20 shadow-lg overflow-hidden max-w-sm mx-auto p-4 ">
+              <Image
+                src="/assets/profile.png"
+                alt="Tukesh Kumar — avatar"
+                priority
+                fill
+                className="object-cover object-top"
+              />
+            </div>
           </div>
         </PanelContent>
       </Panel>
@@ -116,8 +116,9 @@ export default function Home() {
                 className="group block rounded-md p-3 -m-3 hover:bg-gray-50 dark:hover:bg-dark-bg/40 transition"
               >
                 <span className="text-gray-400 dark:text-gray-300 font-mono group-hover:underline">codexp-ai</span>
-                <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.</span>
-              </Link>
+              </Link> 
+              <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">Explain, document, and visualize codebases with instant docs, diagrams, and Q&A for any repo.</span>
+
             </li>
           </ul>
         </PanelContent>
