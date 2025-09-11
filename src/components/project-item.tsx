@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ChevronsUpDown, ChevronsDownUp, ExternalLink } from "lucide-react";
+import Image from "next/image";
 import * as Collapsible from "@radix-ui/react-collapsible";
 
 interface Project {
@@ -13,7 +14,7 @@ interface Project {
   };
   link?: string;
   skills: string[];
-  description: string;
+  description: string | string[];
   thumbnail?: string;
   isExpanded?: boolean;
   logo?: string;
@@ -27,6 +28,11 @@ interface ProjectItemProps {
 export function ProjectItem({ project, className }: ProjectItemProps) {
   const { start, end } = project.period;
   const isOngoing = !end;
+  const points: string[] = Array.isArray(project.description)
+    ? project.description
+    : project.description
+    ? [String(project.description)]
+    : [];
 
   return (
     <Collapsible.Root defaultOpen={project.isExpanded} asChild>
@@ -99,27 +105,56 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
         </div>
 
         <Collapsible.Content className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-          <div className="space-y-4 border-t border-dashed border-gray-300 dark:border-gray-600 p-4">
-            {project.description && (
-              <div className="prose prose-sm max-w-none">
-                <p className="text-gray-700 dark:text-gray-300  text-sm leading-relaxed">
-                  {project.description}
-                </p>
+          <div className="border-t border-dashed border-gray-300 dark:border-gray-600 p-4">
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+              {/* Thumbnail column */}
+              <div className="md:col-span-1 flex items-center justify-center">
+                {project.thumbnail ? (
+                  <div className="w-full max-w-[220px] md:max-w-none">
+                    <div className="relative w-full aspect-video rounded-md overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                      <Image
+                        src={project.thumbnail}
+                        alt={`Thumbnail of ${project.title}`}
+                        fill
+                        className="object-cover"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-full h-32 rounded-md bg-zinc-100 dark:bg-zinc-900" />
+                )}
               </div>
-            )}
+              {/* Description and skills column */}
+              <div className="md:col-span-2">
+                {points.length > 0 && (
+                  <div className="prose prose-sm max-w-none">
+                    {points.length === 1 ? (
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{points[0]}</p>
+                    ) : (
+                      <ul className="list-disc ml-5 text-gray-700 dark:text-gray-300 text-sm leading-relaxed space-y-1">
+                        {points.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
 
-            {project.skills && project.skills.length > 0 && (
-              <ul className="flex flex-wrap gap-1.5">
-                {project.skills.map((skill, index) => (
-                  <li key={index} className="flex">
-                    <span className="inline-flex items-center rounded-lg border border-transparent bg-zinc-50 px-2 py-0.5 font-mono text-xs text-gray-600 dark:bg-zinc-900 dark:text-gray-400">
-                      {skill}
-                    </span>
+                {project.skills && project.skills.length > 0 && (
+                  <ul className={`flex flex-wrap gap-1.5 mt-4 ${points.length > 1 ? 'ml-5' : ''}`}>
+                    {project.skills.map((skill, index) => (
+                      <li key={index} className="flex">
+                        <span className="inline-flex items-center rounded-lg border border-transparent bg-zinc-50 px-2 py-0.5 font-mono text-xs text-gray-600 dark:bg-zinc-900 dark:text-gray-400">
+                          {skill}
+                        </span>
 
-                  </li>
-                ))}
-              </ul>
-            )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
           </div>
         </Collapsible.Content>
       </div>

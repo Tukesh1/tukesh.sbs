@@ -3,7 +3,12 @@ export const WEB_APPS = [
   {
     title: "School Attendance Management System",
     tags: ["React", "Go", "Tailwind CSS", "TypeScript", "Sqlite"],
-    description: "A full-stack school attendance management system built with Go and React/TypeScript. Features real-time attendance tracking, student management, class organization, and comprehensive reporting",
+    description: [
+      "Full-stack school attendance management system built with Go and React/TypeScript.",
+      "Real-time attendance tracking and student check-ins.",
+      "Student management with class organization and role-based access.",
+      "Comprehensive reporting and exportable attendance records."
+    ],
     thumbnail: "/assets/project/student-management-interface.png",
     repo: "https://github.com/Tukesh1/student-api",
     period: {
@@ -14,7 +19,13 @@ export const WEB_APPS = [
   {
     title: "Tracode",
     tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js", "Express", "MongoDB"],
-    description: "A unified dashboard to track coding progress across LeetCode, CodeChef, and Codeforces. Built because I was tired of jumping between platforms to check my stats. Features real-time progress tracking, visual analytics, and friendly competition with other developers. The platform aggregates data from multiple coding platforms into one clean interface.",
+    description: [
+      "Unified dashboard to track coding progress across LeetCode, CodeChef, and Codeforces.",
+      "Real-time progress tracking with visual analytics and charts.",
+      "Friendly competition features to compare progress with others.",
+      "Aggregates data from multiple coding platforms into a single clean interface.",
+      "Built with React, Vite, Tailwind CSS and a Node.js/Express backend."
+    ],
     
     
     
@@ -27,7 +38,12 @@ export const WEB_APPS = [
   {
     title: "Kreelab",
     tags: ["React", "Node.js", "MongoDB", "Express"],
-    description: "Professional marketing website built for Kreelab as a freelance project. Features dynamic content management, smooth animations, and an intuitive admin panel. Worked closely with the client to create a modern, responsive site that perfectly represents their brand and drives business results.",
+    description: [
+      "Professional marketing website built for Kreelab as a freelance project.",
+      "Dynamic content management and an intuitive admin panel.",
+      "Smooth animations and responsive UI to represent the client's brand.",
+      "Client-focused development delivering measurable business results."
+    ],
     thumbnail: "/assets/project/kreelab.png",
     repo: "https://github.com/Tukesh1/kreelab",
     period: {
@@ -42,7 +58,12 @@ export const AI_ML_PROJECTS = [
   {
     title: "Git-Repo-Analyzer",
     tags: ["Python", "Flask", "GitHub API", "OpenAI API"],
-    description: "Intelligent tool that analyzes GitHub repositories to extract meaningful insights about code health, contributor patterns, and project activity. Uses GitHub API and OpenAI to provide natural language summaries of complex metrics. Perfect for team leads making data-driven decisions about their codebases.",
+    description: [
+      "Analyzes GitHub repositories to surface insights on code health and project activity.",
+      "Detects contributor patterns and trends across commits and pull requests.",
+      "Uses GitHub API and OpenAI to generate natural-language summaries of metrics.",
+      "Helps team leads make data-driven decisions about their codebases."
+    ],
     thumbnail: "/assets/project/git-repo.png",
     repo: "https://github.com/Tukesh1/Git-Repo-Analyzer",
     period: {
@@ -53,7 +74,12 @@ export const AI_ML_PROJECTS = [
   {
     title: "Spam Mail Prediction",
     tags: ["Machine Learning", "Python", "Scikit-learn", "NLP"],
-    description: "Advanced spam detection system built from scratch using machine learning and NLP techniques. Features ensemble approach with multiple algorithms, text preprocessing, and sender reputation analysis. Includes real-time testing interface that shows exactly why emails are classified as spam or legitimate.",
+    description: [
+      "Advanced spam detection system built using machine learning and NLP techniques.",
+      "Ensemble approach combining multiple algorithms for robust classification.",
+      "Extensive text preprocessing and sender reputation analysis.",
+      "Real-time testing interface that explains why emails are classified."
+    ],
     thumbnail: "/assets/project/spam-mail.png",
     repo: "https://github.com/Tukesh1/spam-mail-predection-using-ML",
     period: {
@@ -67,7 +93,11 @@ export const CLI_PROJECTS = [
   {
     title: "CLI-ATM-Mini-Project",
     tags: ["C++", "OOP", "File Handling"],
-    description: "A command-line-based ATM system built using C++, featuring authentication, balance inquiry, deposits, withdrawals, and transaction history.",
+    description: [
+      "Command-line ATM system implemented in C++ demonstrating OOP principles.",
+      "Features user authentication, balance inquiry, deposits, and withdrawals.",
+      "Persists transaction history using file handling for auditability."
+    ],
     thumbnail: "https://opengraph.githubassets.com/1/Tukesh1/CLI-ATM-Mini-Project-",
     repo: "https://github.com/Tukesh1/CLI-ATM-Mini-Project-",
     period: {
@@ -78,7 +108,11 @@ export const CLI_PROJECTS = [
   {
     title: "Training Schedule Management System",
     tags: ["C++", "File Handling", "DSA"],
-    description: "A system for managing training schedules, trainer allocation, and generating reports using optimized algorithms.",
+    description: [
+      "System to manage training schedules with trainer allocation and reporting.",
+      "Implements optimized algorithms to generate efficient schedules and reports.",
+      "Includes features for trainer assignment and performance tracking."
+    ],
     thumbnail: "https://opengraph.githubassets.com/1/tukesh1/Training-Schedule-Management-System",
     repo: "https://github.com/Tukesh1/Training-Schedule-Management-System",
     period: {
