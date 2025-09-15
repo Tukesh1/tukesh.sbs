@@ -16,7 +16,9 @@ interface Project {
   skills: string[];
   description: string | string[];
   thumbnail?: string;
+  priority?: boolean;
   isExpanded?: boolean;
+  logo?: string;
 }
 
 interface ProjectItemProps {
@@ -115,11 +117,10 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
                         src={project.thumbnail}
                         alt={`Thumbnail of ${project.title}`}
                         fill
-                        loading="lazy"
-                        decoding="async"
-                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 40vw, 320px"
+                        loading="eager"
+                        priority
                         className="object-cover"
-                        placeholder="empty"
+                        unoptimized
                       />
                     </div>
                   </div>

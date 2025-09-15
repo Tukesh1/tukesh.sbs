@@ -90,7 +90,7 @@ export default function Home() {
               <Image
                 src="/assets/profile.png"
                 alt="Tukesh Kumar — avatar"
-                
+                priority
                 fill
                 className="object-cover object-top"
               />
