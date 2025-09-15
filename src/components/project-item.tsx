@@ -17,7 +17,6 @@ interface Project {
   description: string | string[];
   thumbnail?: string;
   isExpanded?: boolean;
-  logo?: string;
 }
 
 interface ProjectItemProps {
@@ -108,7 +107,6 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
           <div className="relative border-t border-b border-dashed border-gray-300 dark:border-gray-600 p-4">
             <div aria-hidden className="hidden md:block absolute left-[33.333%] top-0 bottom-0 border-l border-dashed border-gray-300 dark:border-gray-600" />
             <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-              {/* Thumbnail column */}
               <div className="md:col-span-1 flex items-center justify-center">
                 {project.thumbnail ? (
                   <div className="w-full max-w-[220px] md:max-w-none">
@@ -117,10 +115,11 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
                         src={project.thumbnail}
                         alt={`Thumbnail of ${project.title}`}
                         fill
-                        loading="eager"
-                        priority
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 40vw, 320px"
                         className="object-cover"
-                        unoptimized
+                        placeholder="empty"
                       />
                     </div>
                   </div>
@@ -143,8 +142,7 @@ export function ProjectItem({ project, className }: ProjectItemProps) {
                     )}
                   </div>
                 )}
-
-                {project.skills && project.skills.length > 0 && (
+                {project.skills.length > 0 && (
                   <ul className={`flex flex-wrap gap-1.5 mt-4 ${points.length > 1 ? 'ml-5' : ''}`}>
                     {project.skills.map((skill, index) => (
                       <li key={index} className="flex">

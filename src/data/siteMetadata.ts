@@ -26,6 +26,7 @@ export const siteMetadata = {
     x: "https://x.com/sarifInsaan",
     linkedinLink: "https://www.linkedin.com/in/tukesh-kumar/",
     githubLink: "https://github.com/tukesh1",
+    
   },
   pages: {
     home: {
@@ -34,7 +35,7 @@ export const siteMetadata = {
     },
     about: {
       title: "About ",
-      description: "My journey as a Frontend Developer & AI Specialist, my skills in React, TypeScript, Python, and experience building AI-powered web applications.",
+      description: "Frontend Developer & AI Engineer, my skills in React, TypeScript, Python, and experience building AI-powered web applications.",
     },
     projects: {
       title: "Projects ",

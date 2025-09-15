@@ -31,6 +31,10 @@ export default function Head() {
         name="dmca-site-verification" 
         content="K1ZuK2dONXZSR1dadCtDc1lxcUkwUT090" 
       />
+
+      {/* Performance: establish early connection for remote project thumbnails */}
+      <link rel="preconnect" href="https://opengraph.githubassets.com" crossOrigin="anonymous" />
+      <link rel="dns-prefetch" href="https://opengraph.githubassets.com" />
       
       {/* Structured Data for SEO */}
       <StructuredData type="person" />
